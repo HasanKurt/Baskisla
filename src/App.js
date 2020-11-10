@@ -3,8 +3,7 @@ import React from 'react'
 import './Components/Persons'
 import Persons from './Components/Persons';
 import OriginalPage from './Components/OriginalPage';
-import * as data from './data.json'
-
+import {stuff} from './data.js' 
 
 class App extends React.Component{
 
@@ -12,17 +11,6 @@ class App extends React.Component{
     persons : []
   };
 
-  loadJSON(callback) {   
-    var xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'data.json', true);
-    xobj.onreadystatechange = function () {
-      if (xobj.readyState == 4 && xobj.status == "200") {
-        callback(JSON.parse(xobj.responseText));
-      }
-    };
-    xobj.send(null); 
-  };
 
   downloadObjectAsJson(exportObj, exportName){
     var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj));
@@ -41,13 +29,9 @@ class App extends React.Component{
   // .then((data) => {this.setState({ persons: data }); this.downloadObjectAsJson(data, "data.json") } );
   
   //use fake data
-  this.loadJSON(function(json) {
-    console.log(json); // this will log out the json object
-  });
-
-  const {allData} = data;
-  this.setState(allData);
-
+  var x = JSON.parse(stuff);
+  var persons = x.persons;
+  this.setState({persons});
   }
     
 render() {
