@@ -4,19 +4,20 @@ import {
     Route,
     Link
       } from 'react-router-dom';
+import PersonDetails from './PersonDetails'      
       
     const Persons = ({ persons }) => {
       return (
         <div>
           <center><h1>Person List</h1></center>
+          <>
           {persons.map((person) => (
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">{person.firstName}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{person.lastName}</h6>
-                </div>
+            <div>
+            <Link to={`/persons/${person.id}`} ><div>{person.id} {person.firstName} {person.lastName}</div></Link>
             </div>
-          ))}
+            
+            ))}
+        </>
         </div>
       )
     };

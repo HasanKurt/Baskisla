@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
- const PersonDetails = () => {
+ const PersonDetails = ({match}) => {
     return (
         <div>
-           <h1>Person Details</h1> 
+           <h1>Person Details of {match.params.id}</h1> 
         </div>
      );
     };
