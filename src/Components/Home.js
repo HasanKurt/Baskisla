@@ -12,9 +12,7 @@ const Home = () => {
     <p>
         Baskisla is a project to connect to your roots.
     </p>
-    <Router>
-        <Link to="/person">Click here to go to the person</Link>
-    </Router>
+    <Link to="/persons">Click here to go to the person</Link>
     </div>
     );
 }
