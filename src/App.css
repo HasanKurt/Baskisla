@@ -1,5 +1,25 @@
 .App {
   text-align: center;
+  color:darkslategray;
+}
+
+button{
+  color: white;
+  background: #fd4659;
+  padding: 12px 24px;
+  border: 2px solid;
+  display: inline-block;
+  border-radius: 4px;
+  transition-duration: 0.2s;
+  width: 50%;
+  max-width: 150px;
+  
+}
+button:hover{
+  background: white;
+  color: #fd4659;
+  border: 2px solid
+  
 }
 
 .App-logo {
