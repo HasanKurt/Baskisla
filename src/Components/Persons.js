@@ -17,7 +17,10 @@ import PersonDetails from './PersonDetails'
             //persons.map(person => console.log(person.lastName));
             if(state.searchTerm == undefined)
                 return persons;
-            return persons.filter(person => (person.firstName?person.firstName:'').toLowerCase().includes(state.searchTerm))//firstName.toLowerCase().includes(state.searchTerm) )
+            return persons.filter(person => 
+                (person.firstName?person.firstName:'').toLowerCase().includes(state.searchTerm.toLowerCase())
+                || (person.lastName?person.lastName:'').toLowerCase().includes(state.searchTerm.toLowerCase())
+                )
         }
 
       return (
@@ -25,6 +28,7 @@ import PersonDetails from './PersonDetails'
           <center><h1>Person List</h1></center>
           <input type='text' value={state.searchTerm} onChange={editSearchTerm} placeholder="Enter a name here" />
           <>
+          {state.searchTerm == ''?<div></div>:<div>There are {dynamicSearch().length} people in the search results</div>}
           {dynamicSearch().map((person) => (
             <div>
             <Link to={`/persons/${person.id}`} ><div>{person.id} {person.firstName} {person.lastName}</div></Link>
