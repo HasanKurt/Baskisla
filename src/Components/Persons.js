@@ -31,7 +31,7 @@ import PersonDetails from './PersonDetails'
           {state.searchTerm == ''?<div></div>:<div>There are {dynamicSearch().length} people in the search results</div>}
           {dynamicSearch().map((person) => (
             <div>
-            <Link to={`/persons/${person.id}`} ><div>{person.id} {person.firstName} {person.lastName}</div></Link>
+            <Link to={`/persons/${person.id}`} ><button type="button" className={'button'+person.gender}>{person.firstName} {person.lastName}</button></Link>
             </div>
             
             ))}

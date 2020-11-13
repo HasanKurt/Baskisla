@@ -34,14 +34,14 @@ class App extends React.Component{
 
   componentDidMount()
   {
-  //   fetch('https://localhost:44332/api/person')
-  // .then(response => response.json())
-  // .then((data) => {this.setState({ persons: data }); this.downloadObjectAsJson(data, "data.json") } );
+  fetch('https://baskislaapi20201113123205.azurewebsites.net/api/person')
+   .then(response => response.json())
+   .then((data) => {this.setState({ persons: data }); /*this.downloadObjectAsJson(data, "data.json")*/ } );
   
   //use fake data
-  var x = JSON.parse(stuff);
-  var persons = x.persons;
-  this.setState({persons});
+  //var x = JSON.parse(stuff);
+  //var persons = x.persons;
+  //this.setState({persons});
   }
     
 render() {
