@@ -13,7 +13,7 @@ const PersonLink = ({id}) => {
     const [loading, setLoading] = React.useState(true);
 
     React.useEffect(() => {
-        fetch(`https://localhost:44332/api/person/${id}`)
+        fetch(`https://baskislaapi20201113123205.azurewebsites.net/api/person/${id}`)
             .then(response => response.json())
             .then((data) => { setName(data.firstName); setGender(data.gender); setLoading(false); });
 

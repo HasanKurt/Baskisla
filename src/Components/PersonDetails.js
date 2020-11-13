@@ -16,7 +16,7 @@ const PersonDetails = ({ match }) => {
     
 
     React.useEffect(() => {
-        fetch(`https://localhost:44332/api/person/${match.params.id}/details`)
+        fetch(`https://baskislaapi20201113123205.azurewebsites.net/api/person/${match.params.id}/details`)
             .then(response => response.json())
             .then((data) => { setDetails(data); setIsLoading(false); });
 
