@@ -46,11 +46,11 @@ class App extends React.Component{
     
 render() {
   return (
-    <div className="App">
+    <div className="App" style={{alignItems: 'center'}}>
       {/* <OriginalPage /> */}
       
       <Router basename={process.env.PUBLIC_URL}>
-      <div>
+      <div style={{alignItems: 'center'}}>
             <Link to="/home">Home </Link>
             <Link to="/about">About </Link>
             <Link to="/persons">Persons </Link>
