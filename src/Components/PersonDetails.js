@@ -11,7 +11,9 @@ const PersonDetails = ({ match }) => {
 
     const [details, setDetails] = React.useState({});
     const [isLoading, setIsLoading] = React.useState(true);
-    const [open, setOpen] = React.useState(false);
+    const [openDad, setOpenDad] = React.useState(false);
+    const [openMom, setOpenMom] = React.useState(false);
+    
 
     React.useEffect(() => {
         fetch(`https://localhost:44332/api/person/${match.params.id}/details`)
@@ -34,14 +36,14 @@ const PersonDetails = ({ match }) => {
                             <PersonLink id={details.father  } />
                                 :
                                 <>
-                                    <PersonAddModal details={details} open={open} setOpen={setOpen} addFather={true}/>
+                                    <PersonAddModal id="father"  details={details} open={openDad} setOpen={setOpenDad} addFather={true}/>
                                 </>
                         }
                         {
                             details.mother != null && details.mother != 0 ?
                                 <PersonLink id={details.mother} />
                                 :
-                                <PersonAddModal details={details} open={open} setOpen={setOpen} addFather={false}/>
+                                <PersonAddModal id="mother"  details={details} open={openMom} setOpen={setOpenMom} addFather={false}/>
                         }
                         {details.spouse != 0 ?
                             <>

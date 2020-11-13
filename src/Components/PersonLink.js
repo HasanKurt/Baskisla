@@ -23,7 +23,7 @@ const PersonLink = ({id}) => {
 
     return (
     <div>
-    {loading ?  <div>loading...</div>: <Link to={`/persons/${id}`}><button type="button">Go to {name}</button></Link>}
+    {loading ?  <div>loading...</div>: <Link to={`/persons/${id}`}><button type="button">{name}</button></Link>}
     </div>
     );
 }
