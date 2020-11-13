@@ -5,7 +5,7 @@
 
 button{
   color: white;
-  background: #fd4659;
+  background: lightgray;
   padding: 12px 24px;
   border: 2px solid;
   display: inline-block;
@@ -13,7 +13,12 @@ button{
   transition-duration: 0.2s;
   width: 50%;
   max-width: 150px;
-  
+}
+.buttonM{
+  background: #22a9ad; 
+}
+.buttonF{
+  background: #fd4659; 
 }
 button:hover{
   background: white;
